@@ -1,5 +1,5 @@
 {
-    "name": "ham/paper-airplane",
+    "name": "tristan/paper-airplane",
     "description": "Yet another Telegram Bot API focues on being lightweight and easy to use.",
     "type": "library",
     "license": "MIT",
