@@ -9,7 +9,6 @@
             "email": "tristan@isham.co"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
         "php": ">=8.0",
         "vlucas/phpdotenv": "^5.3",
