@@ -9,19 +9,13 @@
             "email": "tristan@isham.co"
         }
     ],
-    "version": "dev-master",
-    "source": {
-        "url": "git://github.com/tristanisham/PaperAirplane.git",
-        "type": "git",
-        "reference": "main"
-    },
-    "autoload": {
-        "psr-7": {
-            "Tristan\\PaperAirplane": "src"
-        }
-    },
     "minimum-stability": "stable",
     "require": {
         "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PaperAirplane\\": "src/PaperAirplane/"
+        }
     }
 }
