@@ -22,8 +22,7 @@ class Api
             $response = $this->g->request('GET', $this->api_url . 'setwebhook?url=' . $target);
             $r_body = json_decode($response->getBody(), true);
 
-            echo print_r($r_body);
-            
+            //Need to handle variations
             return true;
         } catch (GuzzleException $e) {
             return false;
