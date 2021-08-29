@@ -6,19 +6,19 @@
     'aliases' => 
     array (
     ),
-    'reference' => '39512a24456aeceeda30000acef90203449ad981',
+    'reference' => 'd5145e905d2bb137f49ef50274a42285ca695619',
     'name' => 'tristan/paper-airplane',
   ),
   'versions' => 
   array (
     'graham-campbell/result-type' => 
     array (
-      'pretty_version' => 'v1.0.1',
-      'version' => '1.0.1.0',
+      'pretty_version' => 'v1.0.2',
+      'version' => '1.0.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '7e279d2cd5d7fbb156ce46daada972355cea27bb',
+      'reference' => '84afea85c6841deeea872f36249a206e878a5de0',
     ),
     'guzzlehttp/guzzle' => 
     array (
@@ -49,12 +49,12 @@
     ),
     'phpoption/phpoption' => 
     array (
-      'pretty_version' => '1.7.5',
-      'version' => '1.7.5.0',
+      'pretty_version' => '1.8.0',
+      'version' => '1.8.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '994ecccd8f3283ecf5ac33254543eb0ac946d525',
+      'reference' => '5455cb38aed4523f99977c4a12ef19da4bfe2a28',
     ),
     'psr/http-client' => 
     array (
@@ -147,7 +147,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '39512a24456aeceeda30000acef90203449ad981',
+      'reference' => 'd5145e905d2bb137f49ef50274a42285ca695619',
     ),
     'vlucas/phpdotenv' => 
     array (
