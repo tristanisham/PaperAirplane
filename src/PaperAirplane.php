@@ -3,7 +3,7 @@
 namespace PaperAirplane;
 
 use GuzzleHttp\Exception\GuzzleException;
-use PaperAirplane\Exceptions\PaperAirplaneException;;
+use PaperAirplane\Exceptions\PaperAirplaneException;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
