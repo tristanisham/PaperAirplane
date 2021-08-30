@@ -1,10 +1,9 @@
 <?php
+
 namespace PaperAirplane;
 
 use GuzzleHttp\Exception\GuzzleException;
-use PaperAirplane\Exceptions\PaperAirplaneException;
-
-;
+use PaperAirplane\Exceptions\PaperAirplaneException;;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -41,7 +40,6 @@ class Api
                 echo $r_body['description'];
                 return true;
             }
-            
         } catch (GuzzleException $e) {
             die($e);
         }
@@ -52,7 +50,8 @@ class Api
      * * POST Requests
      * * JSON content
      */
-    public function handle_webhooks(): void {
+    public function handle_webhooks(): void
+    {
         $headers = getallheaders();
         if ($headers['Content-Type'] == 'application/json' && $_SERVER['REQUEST_METHOD'] == "POST") {
             $input = file_get_contents("php://input");
@@ -68,6 +67,16 @@ class Api
         } else {
             http_response_code(400);
             throw new PaperAirplaneException("Unsupported Content or Method");
+        }
+    }
+
+    public function get_bot_info(): array
+    {
+        try {
+            $response = $this->g->request("GET", $this->api_url . 'getMe');
+            return json_decode($response->getBody());
+        } catch (GuzzleException $e) {
+            die($e);
         }
     }
 }
