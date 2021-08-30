@@ -70,11 +70,11 @@ class Api
         }
     }
 
-    public function get_bot_info(): array
+    public function get_bot_info(): string
     {
         try {
             $response = $this->g->request("GET", $this->api_url . 'getMe');
-            return json_decode($response->getBody());
+            return $response->getBody();
         } catch (GuzzleException $e) {
             die($e);
         }
