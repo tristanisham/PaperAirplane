@@ -66,7 +66,7 @@ class Api
             }
         } else {
             http_response_code(400);
-            throw new PaperAirplaneException("Unsupported Content or Method");
+            die("Unsupported Content or Method");
         }
     }
     /**
