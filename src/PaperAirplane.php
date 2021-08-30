@@ -47,10 +47,10 @@ class Api
         }
     }
     /**
-     * Sets up the page handle incoming webhooks from Telegram.
-     * If the data value ```ok``` is true, then the request body is set to the ```$this->data``` variable.
-     * 
-     * @throws PaperAirplaneException
+     * ## Sets up the page handle incoming webhooks from Telegram.
+     * Sets the page up to only **accpet**:
+     * * POST Requests
+     * * JSON content
      */
     public function handle_webhooks(): void {
         $headers = getallheaders();
