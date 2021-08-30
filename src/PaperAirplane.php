@@ -55,14 +55,15 @@ class Api
         $headers = getallheaders();
         if ($headers['Content-Type'] == 'application/json' && $_SERVER['REQUEST_METHOD'] == "POST") {
             $input = file_get_contents("php://input");
-            $data = json_decode($input, true);
-            // Finally where good code goes to fly!
-            if ($data['ok']) {
-                $this->data = $data;
-            } else {
-                echo $data['description'];
-                die();
-            }
+            echo $input;
+            //     $data = json_decode($input, true);
+            //     // Finally where good code goes to fly!
+            //     if ($data['ok']) {
+            //         $this->data = $data;
+            //     } else {
+            //         echo $data['description'];
+            die();
+            //     }
         } else {
             http_response_code(400);
             echo "Unsupported Content or Method";
