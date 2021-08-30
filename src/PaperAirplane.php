@@ -48,7 +48,7 @@ class Api
     }
     /**
      * Sets up the page handle incoming webhooks from Telegram.
-     * Sets the ```data``` object variable.
+     * If the data value ```ok``` is true, then the request body is set to the ```$this->data``` variable.
      * 
      * @throws PaperAirplaneException
      */
