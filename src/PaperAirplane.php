@@ -60,7 +60,8 @@ class Api
             if ($data['ok']) {
                 $this->data = $data;
             } else {
-                throw new PaperAirplaneException($data['description']);
+                echo $data['description'];
+                die();
             }
         } else {
             http_response_code(400);
