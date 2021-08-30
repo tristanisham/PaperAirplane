@@ -66,7 +66,8 @@ class Api
             }
         } else {
             http_response_code(400);
-            die("Unsupported Content or Method");
+            echo "Unsupported Content or Method";
+            die();
         }
     }
     /**
