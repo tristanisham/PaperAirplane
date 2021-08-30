@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'a807f0f770e14535bd8e371799c0bb0a0fc80143',
+    'reference' => '0bba694b64490a0f3ec436febb8b98b6669fa06d',
     'name' => 'tristan/paper-airplane',
   ),
   'versions' => 
@@ -171,7 +171,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'a807f0f770e14535bd8e371799c0bb0a0fc80143',
+      'reference' => '0bba694b64490a0f3ec436febb8b98b6669fa06d',
     ),
     'vlucas/phpdotenv' => 
     array (

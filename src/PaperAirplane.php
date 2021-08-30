@@ -55,14 +55,12 @@ class Api
         $headers = getallheaders();
         if ($headers['Content-Type'] == 'application/json' && $_SERVER['REQUEST_METHOD'] == "POST") {
             $input = file_get_contents("php://input");
-            if (is_string($input)) {
-                $data = json_decode($input, true);
-                // Finally where good code goes to fly!
-                if ($data['ok']) {
-                    $this->data = $data;
-                } else {
-                    throw new PaperAirplaneException($data['description']);
-                }
+            $data = json_decode($input, true);
+            // Finally where good code goes to fly!
+            if ($data['ok']) {
+                $this->data = $data;
+            } else {
+                throw new PaperAirplaneException($data['description']);
             }
         } else {
             http_response_code(400);
