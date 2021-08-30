@@ -97,6 +97,8 @@ class ComposerStaticInit79268180e94e2419662b754a0298da54
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'PaperAirplane\\Api' => __DIR__ . '/../..' . '/src/PaperAirplane.php',
+        'PaperAirplane\\Exceptions\\PaperAirplaneException' => __DIR__ . '/../..' . '/src/Exceptions/PaperAirplaneException.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',

@@ -69,7 +69,9 @@ class Api
             throw new PaperAirplaneException("Unsupported Content or Method");
         }
     }
-
+    /**
+     * @return string JSON string value for Telegram's Bot Info *getMe()* function.
+     */
     public function get_bot_info(): string
     {
         try {
