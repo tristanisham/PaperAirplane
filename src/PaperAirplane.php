@@ -1,9 +1,14 @@
 <?php
 namespace PaperAirplane;
 
-use GuzzleHttp\Exception\GuzzleException;;
+use GuzzleHttp\Exception\GuzzleException;
+use PaperAirplane\Exceptions\PaperAirplaneException;
+
+;
 
 require_once __DIR__ . '/../vendor/autoload.php';
+
+// https://core.telegram.org/bots/api#authorizing-your-bot
 
 class Api
 {
@@ -31,13 +36,32 @@ class Api
             $response = $this->g->request('GET', $this->api_url . 'setwebhook?url=' . $target);
             $r_body = json_decode($response->getBody(), true);
 
-            if ($r_body['ok'] == 1 && $r_body['result'] == 1) {
+            if ($r_body['ok'] == true && $r_body['result'] == true) {
                 echo $r_body['description'];
                 return true;
             }
             
         } catch (GuzzleException $e) {
             die($e);
+        }
+    }
+    /**
+     * Sets up the page security to handle incoming webhooks from Telegram.
+     * 
+     * @throws PaperAirplaneException
+     */
+    public function handle_webhooks(): void {
+        $headers = getallheaders();
+        if ($headers['Content-Type'] == 'application/json' && $_SERVER['REQUEST_METHOD'] == "POST") {
+            // Parse first!
+            // if ($_POST['ok'] == true) {
+
+            // } else {
+            //     throw new PaperAirplaneException($_POST['description']);
+            // }
+        } else {
+            http_response_code(400);
+            throw new PaperAirplaneException("Unsupported Content or Method");
         }
     }
 }
