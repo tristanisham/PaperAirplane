@@ -14,6 +14,7 @@ class Api
 {
     protected string $api_url;
     private \GuzzleHttp\Client $g;
+    public array $data;
     public function __construct(protected string $bot_token)
     {
         $this->api_url = "https://api.telegram.org/bot" . $this->bot_token . "/";
@@ -46,19 +47,24 @@ class Api
         }
     }
     /**
-     * Sets up the page security to handle incoming webhooks from Telegram.
+     * Sets up the page handle incoming webhooks from Telegram.
+     * Sets the ```data``` object variable.
      * 
      * @throws PaperAirplaneException
      */
     public function handle_webhooks(): void {
         $headers = getallheaders();
         if ($headers['Content-Type'] == 'application/json' && $_SERVER['REQUEST_METHOD'] == "POST") {
-            // Parse first!
-            // if ($_POST['ok'] == true) {
-
-            // } else {
-            //     throw new PaperAirplaneException($_POST['description']);
-            // }
+            $input = file_get_contents("php://input");
+            if (is_string($input)) {
+                $data = json_decode($input, true);
+                // Finally where good code goes to fly!
+                if ($data['ok']) {
+                    $this->data = $data;
+                } else {
+                    throw new PaperAirplaneException($data['description']);
+                }
+            }
         } else {
             http_response_code(400);
             throw new PaperAirplaneException("Unsupported Content or Method");
